@@ -94,9 +94,7 @@ export default function Header() {
           </SheetTrigger>
           <SheetContent side="left" className="w-80">
             <div className="flex items-center space-x-3 mb-8 p-4 border-b">
-              <div className="h-10 w-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">БА</span>
-              </div>
+              <img src="/logo.png" alt="БелАвто Центр" className="h-10 w-10 object-contain" />
               <span className="font-bold text-xl text-gray-900">{settings.companyName}</span>
             </div>
             <div className="flex flex-col space-y-4 mt-8">
@@ -128,9 +126,7 @@ export default function Header() {
 
         {/* Логотип */}
         <Link href="/" className="flex items-center space-x-2">
-          <div className="h-8 w-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">БА</span>
-          </div>
+          <img src="/logo.png" alt="БелАвто Центр" className="h-8 w-8 object-contain" />
           <span className="font-bold text-lg sm:text-xl text-gray-900">{settings.companyName}</span>
         </Link>
 

@@ -58,9 +58,7 @@ export default function Footer() {
           {/* Колонка 1: Логотип и слоган */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="h-8 w-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">БА</span>
-              </div>
+              <img src="/logo.png" alt="БелАвто Центр" className="h-8 w-8 object-contain" />
               <span className="font-bold text-xl">{settings.companyName}</span>
             </Link>
             <p className="text-gray-400 text-sm">

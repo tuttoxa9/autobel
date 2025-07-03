@@ -11,103 +11,11 @@ import CarCard from "@/components/car-card"
 import { Filter, SlidersHorizontal } from "lucide-react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 
-// Моковые данные для демонстрации
-const mockCars = [
-  {
-    id: "1",
-    make: "BMW",
-    model: "X5",
-    year: 2020,
-    price: 95000,
-    currency: "BYN",
-    mileage: 45000,
-    engineVolume: 3.0,
-    fuelType: "Дизель",
-    transmission: "Автомат",
-    driveTrain: "Полный",
-    imageUrls: ["/placeholder.svg?height=200&width=300"],
-    isAvailable: true,
-  },
-  {
-    id: "2",
-    make: "Audi",
-    model: "A6",
-    year: 2019,
-    price: 78000,
-    currency: "BYN",
-    mileage: 62000,
-    engineVolume: 2.0,
-    fuelType: "Бензин",
-    transmission: "Автомат",
-    driveTrain: "Передний",
-    imageUrls: ["/placeholder.svg?height=200&width=300"],
-    isAvailable: true,
-  },
-  {
-    id: "3",
-    make: "Mercedes-Benz",
-    model: "C-Class",
-    year: 2021,
-    price: 89000,
-    currency: "BYN",
-    mileage: 28000,
-    engineVolume: 2.0,
-    fuelType: "Бензин",
-    transmission: "Автомат",
-    driveTrain: "Задний",
-    imageUrls: ["/placeholder.svg?height=200&width=300"],
-    isAvailable: true,
-  },
-  {
-    id: "4",
-    make: "Volkswagen",
-    model: "Passat",
-    year: 2018,
-    price: 52000,
-    currency: "BYN",
-    mileage: 89000,
-    engineVolume: 1.8,
-    fuelType: "Бензин",
-    transmission: "Автомат",
-    driveTrain: "Передний",
-    imageUrls: ["/placeholder.svg?height=200&width=300"],
-    isAvailable: true,
-  },
-  {
-    id: "5",
-    make: "Toyota",
-    model: "Camry",
-    year: 2020,
-    price: 67000,
-    currency: "BYN",
-    mileage: 35000,
-    engineVolume: 2.5,
-    fuelType: "Бензин",
-    transmission: "Автомат",
-    driveTrain: "Передний",
-    imageUrls: ["/placeholder.svg?height=200&width=300"],
-    isAvailable: true,
-  },
-  {
-    id: "6",
-    make: "Hyundai",
-    model: "Tucson",
-    year: 2019,
-    price: 58000,
-    currency: "BYN",
-    mileage: 47000,
-    engineVolume: 2.0,
-    fuelType: "Бензин",
-    transmission: "Автомат",
-    driveTrain: "Полный",
-    imageUrls: ["/placeholder.svg?height=200&width=300"],
-    isAvailable: true,
-  },
-]
+// Моковые данные удалены
 
 export default function CatalogPage() {
-  const [cars, setCars] = useState(mockCars)
-  const [filteredCars, setFilteredCars] = useState(mockCars)
+  const [cars, setCars] = useState([])
+  const [filteredCars, setFilteredCars] = useState([])
   const [filters, setFilters] = useState({
     priceRange: [20000, 150000],
     make: "all",

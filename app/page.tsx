@@ -21,65 +21,7 @@ interface HomepageSettings {
   ctaSubtitle: string
 }
 
-// Моковые данные для демонстрации
-const mockCars = [
-  {
-    id: "1",
-    make: "BMW",
-    model: "X5",
-    year: 2020,
-    price: 95000,
-    currency: "BYN",
-    mileage: 45000,
-    engineVolume: 3.0,
-    fuelType: "Дизель",
-    transmission: "Автомат",
-    imageUrls: ["/placeholder.svg?height=200&width=300"],
-    isAvailable: true,
-  },
-  {
-    id: "2",
-    make: "Audi",
-    model: "A6",
-    year: 2019,
-    price: 78000,
-    currency: "BYN",
-    mileage: 62000,
-    engineVolume: 2.0,
-    fuelType: "Бензин",
-    transmission: "Автомат",
-    imageUrls: ["/placeholder.svg?height=200&width=300"],
-    isAvailable: true,
-  },
-  {
-    id: "3",
-    make: "Mercedes-Benz",
-    model: "C-Class",
-    year: 2021,
-    price: 89000,
-    currency: "BYN",
-    mileage: 28000,
-    engineVolume: 2.0,
-    fuelType: "Бензин",
-    transmission: "Автомат",
-    imageUrls: ["/placeholder.svg?height=200&width=300"],
-    isAvailable: true,
-  },
-  {
-    id: "4",
-    make: "Volkswagen",
-    model: "Passat",
-    year: 2018,
-    price: 52000,
-    currency: "BYN",
-    mileage: 89000,
-    engineVolume: 1.8,
-    fuelType: "Бензин",
-    transmission: "Автомат",
-    imageUrls: ["/placeholder.svg?height=200&width=300"],
-    isAvailable: true,
-  },
-]
+// Моковые данные удалены
 
 export default function HomePage() {
   const [searchForm, setSearchForm] = useState({
@@ -94,7 +36,7 @@ export default function HomePage() {
     phone: "",
   })
 
-  const [cars, setCars] = useState(mockCars)
+  const [cars, setCars] = useState([])
   const [settings, setSettings] = useState<HomepageSettings>({
     heroTitle: "Найди свой автомобиль надежным способом",
     heroSubtitle: "Более 500 проверенных автомобилей. Гарантия качества. Помощь в оформлении кредита.",
@@ -185,7 +127,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/images/audi-hero.jpg')`,
+            backgroundImage: `url('/audi-bg.jpg')`,
           }}
         />
 

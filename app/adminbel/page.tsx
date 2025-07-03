@@ -54,27 +54,27 @@ export default function AdminPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-400"></div>
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-400"></div>
       </div>
     )
   }
 
   if (!user) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-        <Card className="w-full max-w-md bg-white/10 backdrop-blur-lg border-white/20">
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <Card className="w-full max-w-md bg-gray-50 border-gray-200 shadow-lg">
           <CardHeader className="text-center">
-            <div className="h-16 w-16 bg-gradient-to-br from-purple-400 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <span className="text-white font-bold text-xl">БА</span>
+            <div className="h-16 w-16 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <img src="/logo.png" alt="БелАвто Центр" className="h-16 w-16 object-contain" />
             </div>
-            <CardTitle className="text-white text-2xl">Админ-панель</CardTitle>
-            <p className="text-purple-200">БелАвто Центр</p>
+            <CardTitle className="text-gray-900 text-2xl">Админ-панель</CardTitle>
+            <p className="text-gray-600">БелАвто Центр</p>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
-                <Label htmlFor="email" className="text-white">
+                <Label htmlFor="email" className="text-gray-700">
                   Email
                 </Label>
                 <Input
@@ -82,12 +82,12 @@ export default function AdminPage() {
                   type="email"
                   value={loginForm.email}
                   onChange={(e) => setLoginForm({ ...loginForm, email: e.target.value })}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                  className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
                   required
                 />
               </div>
               <div>
-                <Label htmlFor="password" className="text-white">
+                <Label htmlFor="password" className="text-gray-700">
                   Пароль
                 </Label>
                 <Input
@@ -95,7 +95,7 @@ export default function AdminPage() {
                   type="password"
                   value={loginForm.password}
                   onChange={(e) => setLoginForm({ ...loginForm, password: e.target.value })}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                  className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
                   required
                 />
               </div>
@@ -114,27 +114,27 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-white">
       {/* Шапка админки */}
-      <header className="bg-black/20 backdrop-blur-lg border-b border-white/10">
+      <header className="bg-gray-50 border-b border-gray-200 shadow-sm">
         <div className="container px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="h-10 w-10 bg-gradient-to-br from-purple-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold">БА</span>
+              <div className="h-10 w-10 rounded-xl flex items-center justify-center shadow-lg">
+                <img src="/logo.png" alt="БелАвто Центр" className="h-10 w-10 object-contain" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-white">Админ-панель</h1>
-                <p className="text-sm text-purple-200">БелАвто Центр</p>
+                <h1 className="text-xl font-bold text-gray-900">Админ-панель</h1>
+                <p className="text-sm text-gray-600">БелАвто Центр</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-purple-200">{user.email}</span>
+              <span className="text-sm text-gray-600">{user.email}</span>
               <Button
                 onClick={handleLogout}
                 variant="outline"
                 size="sm"
-                className="border-white/20 text-white hover:bg-white/10 bg-transparent"
+                className="border-gray-300 text-gray-700 hover:bg-gray-100 bg-white"
               >
                 <LogOut className="h-4 w-4 mr-2" />
                 Выйти
@@ -147,59 +147,59 @@ export default function AdminPage() {
       {/* Основной контент */}
       <div className="container px-4 py-8">
         <Tabs defaultValue="settings" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 lg:grid-cols-8 bg-black/20 backdrop-blur-lg border-white/10">
+          <TabsList className="grid w-full grid-cols-4 lg:grid-cols-8 bg-gray-100 border-gray-200">
             <TabsTrigger
               value="settings"
-              className="flex items-center space-x-2 data-[state=active]:bg-purple-500/20 data-[state=active]:text-white text-purple-200"
+              className="flex items-center space-x-2 data-[state=active]:bg-blue-500 data-[state=active]:text-white text-gray-600"
             >
               <Settings className="h-4 w-4" />
               <span className="hidden sm:inline">Настройки</span>
             </TabsTrigger>
             <TabsTrigger
               value="cars"
-              className="flex items-center space-x-2 data-[state=active]:bg-purple-500/20 data-[state=active]:text-white text-purple-200"
+              className="flex items-center space-x-2 data-[state=active]:bg-blue-500 data-[state=active]:text-white text-gray-600"
             >
               <Car className="h-4 w-4" />
               <span className="hidden sm:inline">Автомобили</span>
             </TabsTrigger>
             <TabsTrigger
               value="stories"
-              className="flex items-center space-x-2 data-[state=active]:bg-purple-500/20 data-[state=active]:text-white text-purple-200"
+              className="flex items-center space-x-2 data-[state=active]:bg-blue-500 data-[state=active]:text-white text-gray-600"
             >
               <FileText className="h-4 w-4" />
               <span className="hidden sm:inline">Новости</span>
             </TabsTrigger>
             <TabsTrigger
               value="leads"
-              className="flex items-center space-x-2 data-[state=active]:bg-purple-500/20 data-[state=active]:text-white text-purple-200"
+              className="flex items-center space-x-2 data-[state=active]:bg-blue-500 data-[state=active]:text-white text-gray-600"
             >
               <Users className="h-4 w-4" />
               <span className="hidden sm:inline">Заявки</span>
             </TabsTrigger>
             <TabsTrigger
               value="about"
-              className="flex items-center space-x-2 data-[state=active]:bg-purple-500/20 data-[state=active]:text-white text-purple-200"
+              className="flex items-center space-x-2 data-[state=active]:bg-blue-500 data-[state=active]:text-white text-gray-600"
             >
               <Building className="h-4 w-4" />
               <span className="hidden sm:inline">О нас</span>
             </TabsTrigger>
             <TabsTrigger
               value="credit"
-              className="flex items-center space-x-2 data-[state=active]:bg-purple-500/20 data-[state=active]:text-white text-purple-200"
+              className="flex items-center space-x-2 data-[state=active]:bg-blue-500 data-[state=active]:text-white text-gray-600"
             >
               <CreditCard className="h-4 w-4" />
               <span className="hidden sm:inline">Кредит</span>
             </TabsTrigger>
             <TabsTrigger
               value="contacts"
-              className="flex items-center space-x-2 data-[state=active]:bg-purple-500/20 data-[state=active]:text-white text-purple-200"
+              className="flex items-center space-x-2 data-[state=active]:bg-blue-500 data-[state=active]:text-white text-gray-600"
             >
               <MessageSquare className="h-4 w-4" />
               <span className="hidden sm:inline">Контакты</span>
             </TabsTrigger>
             <TabsTrigger
               value="reviews"
-              className="flex items-center space-x-2 data-[state=active]:bg-purple-500/20 data-[state=active]:text-white text-purple-200"
+              className="flex items-center space-x-2 data-[state=active]:bg-blue-500 data-[state=active]:text-white text-gray-600"
             >
               <Star className="h-4 w-4" />
               <span className="hidden sm:inline">Отзывы</span>
