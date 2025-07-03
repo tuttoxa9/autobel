@@ -200,7 +200,7 @@ export default function HomePage() {
       </section>
 
       {/* Блок призыва к действию */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-16 pb-32 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="container px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{settings.ctaTitle}</h2>
